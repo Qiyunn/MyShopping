@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/category_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/product_category_height"
+        android:src="@drawable/img_snow"
+        android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/category_text_cname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="category"
+        android:textSize="@dimen/text_size_25" />
+    <TextView
+        android:id="@+id/category_text_cdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sksndnlnvlsdlvbnsnvdnvlnd"/>
+    <View
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:layout_height="2dp"/>
+</LinearLayout>

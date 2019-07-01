@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/login_activity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_with_mobile"
+        android:textColor="@color/colorButton"
+        android:layout_gravity="center"
+        android:textSize="@dimen/text_size_25"
+        android:layout_marginTop="@dimen/margin_top"/>
+
+    <EditText
+        android:id="@+id/login_activity_edit_mobile"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/mobile"/>
+    <EditText
+        android:id="@+id/login_activity_edit_password"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/password"
+        android:inputType="textPassword"/>
+
+    <CheckBox
+        android:id="@+id/login_activity_check_box"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/remember_me"
+        />
+    <TextView
+        android:id="@+id/login_activity_text_forget_pass"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/forget_password"
+        android:gravity="right"
+        android:clickable="true"
+        android:onClick="onClick"
+        />
+
+    <Button
+        android:id="@+id/login_activity_button_sign_in"
+        android:layout_width="@dimen/button_width"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top_20"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_solid_background"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"/>
+
+    <Button
+        android:id="@+id/login_activity_button_need_account"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_stroke_background"
+        android:text="Need An Account"
+        android:layout_marginTop="@dimen/margin_top"
+        android:textColor="@color/colorButton"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="basket_splash_image">250dp</dimen>
+    <dimen name="edit_text_padding">10dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="margin_top_to_parent">30dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="account_image_width">70dp</dimen>
+    <dimen name="text_size_25">25dp</dimen>
+    <dimen name="edit_text_width">300dp</dimen>
+    <dimen name="button_width">300dp</dimen>
+    <dimen name="margin_top_20">20dp</dimen>
+    <dimen name="view_pager_height_200">200dp</dimen>
+    <dimen name="ne_height">200dp</dimen>
+    <dimen name="margin_top_30">30dp</dimen>
+    <dimen name="product_category_height">150dp</dimen>
+</resources>

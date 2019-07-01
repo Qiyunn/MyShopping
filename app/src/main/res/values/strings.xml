@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">My Shopping</string>
+    <string name="create_account">Create Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="mobile">Mobile</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already Have An Account</string>
+    <string name="policy_terms">By click on the sign Up button you agree with the policy and terms</string>
+    <string name="sign_up_with_mobile">Sign Up With Mobile</string>
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">forget password?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">search</string>
+    <string name="cart">cart</string>
+    <string name="open_nav_drawer">Open Navigation Drawer</string>
+    <string name="close_nav_drawer">Close Navigation Drawer</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="update_profile">Update profile</string>
+</resources>

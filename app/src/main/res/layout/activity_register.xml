@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/register_activity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account"
+        android:textColor="@color/colorButton"
+        android:layout_gravity="center"
+        android:textSize="@dimen/text_size_25"
+        android:layout_marginTop="@dimen/margin_top"/>
+    <ImageView
+        android:id="@+id/register_activity_image_view"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_width="@dimen/account_image_width"
+        android:layout_height="@dimen/account_image_width"
+        android:src="@drawable/img_snow"
+        android:scaleType="centerCrop"/>
+    <EditText
+        android:id="@+id/register_activity_edit_fname"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/first_name"/>
+
+    <EditText
+        android:id="@+id/register_activity_edit_lname"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/register_activity_edit_address"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/address"/>
+
+    <EditText
+        android:id="@+id/register_activity_edit_email"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/register_activity_edit_mobile"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/mobile"
+        android:inputType="phone"/>
+
+
+
+    <EditText
+        android:id="@+id/register_activity_edit_password"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="@string/password"
+        android:inputType="textPassword"/>
+    <Button
+        android:id="@+id/register_activity_button_sign_up"
+        android:layout_width="@dimen/button_width"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top_20"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_solid_background"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"/>
+
+   <TextView
+       android:id="@+id/register_activity_text_policy"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="@dimen/margin_top"
+       android:text="@string/policy_terms"/>
+    <Button
+        android:id="@+id/register_activity_already_registed"
+        android:layout_width="@dimen/button_width"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_stroke_background"
+        android:text="@string/already_have_an_account"
+        android:textColor="@color/colorButton"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ne_height"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+    <ImageView
+        android:id="@+id/nev_header_imageView"
+        android:layout_width="@dimen/account_image_width"
+        android:layout_height="@dimen/account_image_width"
+        android:src="@drawable/img_snow"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/margin_top_30"
+        android:layout_marginLeft="@dimen/margin_top_30"/>
+
+    <TextView
+        android:id="@+id/nev_header_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginLeft="@dimen/margin_top_30"
+        android:text="Yun"
+        android:textSize="@dimen/text_size_25"/>
+
+</LinearLayout>

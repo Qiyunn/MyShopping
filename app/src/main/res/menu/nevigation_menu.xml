@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIN="nevigation_view">
+
+        <item
+            android:id="@+id/nev_profile"
+            android:title="My Profile"
+            android:icon="@drawable/ic_person_white_24dp"
+            >
+        </item>
+
+        <item
+            android:id="@+id/nev_orders"
+            android:title="My Orders"
+            android:icon="@drawable/ic_shopping_basket_white_24dp"
+            >
+        </item>
+        <item
+            android:id="@+id/nev_log_out"
+            android:title="Log Out"
+            android:icon="@drawable/ic_arrow_forward_black_24dp"
+            >
+        </item>
+
+
+
+
+</menu>
