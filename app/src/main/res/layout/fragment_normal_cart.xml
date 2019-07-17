@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/normal_cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/text_group"
+        android:layout_below="@+id/tool_bar"
+        android:padding="@dimen/edit_text_padding">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_group"
+        android:layout_alignParentLeft="true">
+        <EditText
+            android:id="@+id/coupon_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="coupon Number"/>
+        <Button
+            android:id="@+id/coupon_apply_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorButton"
+            android:text="Apply"
+            android:textColor="@color/colorWhite"/>
+        <TextView
+            android:id="@+id/text_after_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/button_group"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_top">
+        <TextView
+            android:id="@+id/normal_cart_text_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="amount"/>
+         <TextView
+             android:id="@+id/normal_cart_text_total_price"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/text_size_20dp"
+             android:text="price"
+             android:textColor="@color/colorButton"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_top">
+
+        <Button
+            android:id="@+id/normal_cart_button_shop"
+            style="@style/HalfButton"
+            android:background="@drawable/button_stroke_background"
+            android:text="Go TO Shopping"
+            android:textColor="@color/colorButton" />
+
+        <Button
+            android:id="@+id/normal_cart_button_check"
+            style="@style/HalfButton"
+            android:text="Check Out" />
+
+    </LinearLayout>
+
+</RelativeLayout>

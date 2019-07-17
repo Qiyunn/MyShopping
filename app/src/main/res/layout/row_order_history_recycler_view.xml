@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_top">
+    <TextView
+        android:id="@+id/order_history_text_order_id"
+        style="@style/orderHistoryTextView"
+        android:text="12"/>
+    <TextView
+        android:id="@+id/order_history_text_item_name"
+        style="@style/orderHistoryTextView"
+        android:text="23"/>
+    <TextView
+        android:id="@+id/order_history_text_item_quantity"
+        style="@style/orderHistoryTextView" />
+    <TextView
+        android:id="@+id/order_history_text_paid_price"
+        style="@style/orderHistoryTextView" />
+    <TextView
+        android:id="@+id/order_history_text_placed_on"
+        style="@style/orderHistoryTextView" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorButton"/>
+
+</LinearLayout>

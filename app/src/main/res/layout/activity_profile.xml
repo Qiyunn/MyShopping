@@ -2,5 +2,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+   <include layout="@layout/tool_bar"/>
+
+ <TextView
+       android:id="@+id/profile_text_fname"
+       style="@style/ProfileTextView"
+       android:text="hello"
+       android:layout_marginTop="@dimen/margin_top_30" />
+
+    <TextView
+        android:id="@+id/profile_text_lname"
+        style="@style/ProfileTextView"
+         />
+    <TextView
+        android:id="@+id/profile_text_email"
+        style="@style/ProfileTextView" />
+    <TextView
+        android:id="@+id/profile_text_mobile"
+        style="@style/ProfileTextView"
+        android:text="fsf"/>
+    <Button
+        android:id="@+id/profile_button_update_profile"
+        style="@style/button"
+        android:layout_marginTop="@dimen/margin_top_30"
+        android:text="Update profile"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/profile_button_reset_password"
+        style="@style/button"
+        android:textAllCaps="false"
+        android:text="Reset Password"
+        android:layout_marginTop="@dimen/margin_top"/>
 
 </LinearLayout>

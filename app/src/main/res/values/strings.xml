@@ -23,4 +23,15 @@
     <string name="close_nav_drawer">Close Navigation Drawer</string>
     <string name="reset_password">Reset Password</string>
     <string name="update_profile">Update profile</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="new_firstname">New FirstNAme</string>
+
+    <string name="update">Update</string>
+    <string name="new_lastname">New LastName</string>
+    <string name="new_address">New Address</string>
+    <string name="new_email">New Email</string>
+    <string name="new_mobile">New Mobile</string>
+    <string name="new_password">New Password</string>
+    <string name="qty">Qty</string>
 </resources>

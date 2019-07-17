@@ -18,18 +18,27 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.myshopping.R;
 import com.example.myshopping.app.EndPoint;
+import com.example.myshopping.helpers.UserHelper;
+import com.example.myshopping.models.User;
 import com.example.myshopping.network.VolleySingleton;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextFname,editTextLname,editTextAddress,editTextEmail,editTextMobile,editTextPassword;
     Button buttonSignUp,buttonAlreadyHave;
+    UserHelper userHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        userHelper=new UserHelper();
+        User user=userHelper.returnUser();
+        if(user.getAppapikey()!=null){
+            startActivity(new Intent(RegisterActivity.this,HomeActivity.class));
+        }else{
         init();
+        }
     }
 
     private void init() {

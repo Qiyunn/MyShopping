@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/empty_cart_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cart_empty"/>
+    <Button
+        android:id="@+id/empty_cart_button"
+        style="@style/button"
+        android:text="Go To Shopping"
+        android:layout_marginTop="@dimen/margin_top_30"/>
+</LinearLayout>

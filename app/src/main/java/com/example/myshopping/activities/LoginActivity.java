@@ -2,11 +2,11 @@ package com.example.myshopping.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -16,21 +16,33 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.example.myshopping.R;
 import com.example.myshopping.app.EndPoint;
+import com.example.myshopping.helpers.RememberHelper;
+import com.example.myshopping.helpers.UserHelper;
+import com.example.myshopping.models.LoginResponse;
+import com.example.myshopping.models.User;
 import com.example.myshopping.network.VolleySingleton;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextMobile, editTextPassword;
     Button buttonSIgnIn, buttonNeedAccount;
-    SharedPreferences sharedPreferences;
+    RememberHelper helper;
+
+
+//    SharedPreferences sharedPreferences;
 
     CheckBox checkBox;
 
@@ -41,15 +53,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            String mobile=savedInstanceState.getString("mobile");
 //            editTextMobile.setText(mobile);
 //        }
+        helper=new RememberHelper(this);
         setContentView(R.layout.activity_login);
+        checkBox=findViewById(R.id.login_activity_check_box);
 
         init();
     }
 
 
+
+
     private void init() {
         editTextMobile = findViewById(R.id.login_activity_edit_mobile);
         editTextPassword = findViewById(R.id.login_activity_edit_password);
+
+        if(helper.retnrnRemember()!=null){
+            editTextMobile.setText(helper.retnrnRemember());
+        }
 
         buttonSIgnIn = findViewById(R.id.login_activity_button_sign_in);
         buttonNeedAccount = findViewById(R.id.login_activity_button_need_account);
@@ -64,40 +84,54 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_activity_button_sign_in:
                 login(editTextMobile.getText().toString(),
                         editTextPassword.getText().toString());
-//                Log.d("data123","the apiKey is:"+apiKey);
+//                Log.d("login","the apiKey is:"+apiKey);
 
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                if(checkBox.isChecked()){
+                    helper.addRemember(editTextMobile.getText().toString());
+                }else{
+                    helper.updateRemember();
+                }
+
                 break;
             case R.id.login_activity_button_need_account:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
         }
-
     }
 
     private void login(String mobile, String password) {
         final String url = EndPoint.loginUser(mobile, password);
-        Log.d("data123", "url is:"+url);
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.POST, url, null,
-                new Response.Listener<JSONArray>() {
+        Log.d("login", "url is:" + url);
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONArray response) {
-                        Log.d("data123", "response is:"+response.toString());
-                        Toast.makeText(LoginActivity.this, "" + response.toString(), Toast.LENGTH_SHORT).show();
-                        try {
-                            JSONObject jsonObject = (JSONObject) response.get(0);
-                            Log.d("data123","the jsonObject is:"+jsonObject);
-                            String apiKey = jsonObject.getString("appapikey ");
-                            String userId= jsonObject.getString("id");
+                    public void onResponse(String response) {
+                        Log.i("Mytag", "response: " + response);
+                        GsonBuilder gsonBuilder = new GsonBuilder();
+                        Gson gson = gsonBuilder.create();
+                        if (response.charAt(0) == '{') {
+                            LoginResponse loginResponse=gson.fromJson(response,LoginResponse.class);
+                            ArrayList<String> arrayList=loginResponse.getArrayList();
+                            if(arrayList.get(0).equals("Mobile number not register")){
+                                Log.i("Mytag", "arraylist not null");
+                            Toast.makeText(LoginActivity.this, ""+arrayList.get(0), Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(LoginActivity.this, "The password is not valid!", Toast.LENGTH_SHORT).show();
 
-                            sharedPreferences=getSharedPreferences("LOGIN_DATA",MODE_PRIVATE);
-                            SharedPreferences.Editor editor=sharedPreferences.edit();
-                            editor.putString("API_KEY",apiKey);
-                            editor.putString("USER_ID",userId);
-                            editor.commit();
+                            }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+
+                        } else if(response.charAt(0) == '['){
+
+                            Type listType = new TypeToken<List<User>>() {
+                            }.getType();
+                            List<User> list = gson.fromJson(response.toString(), listType);
+                            User user = list.get(0);
+                            UserHelper userHelper = new UserHelper();
+                            userHelper.addUser(user);
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        }else{
+                            Toast.makeText(LoginActivity.this, "try in next 5 minuts!", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -107,10 +141,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onErrorResponse(VolleyError error) {
                         Log.d("data123", error.getMessage());
                     }
-                }
-
-        );
+                });
         VolleySingleton.getInstance().addToRequestQue(request);
     }
+
 
 }

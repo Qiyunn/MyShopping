@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CategoryList implements Serializable {
+public class CategoryList {
     @SerializedName("category")
     private ArrayList<Category> arrayList;
 

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/tool_bar"/>
+
+    <EditText
+        android:id="@+id/check_out_edit_billadd"
+        style="@style/EditText"
+        android:layout_marginTop="@dimen/margin_top_30"
+        android:hint="Billing Address"/>
+    <EditText
+        android:id="@+id/check_out_edit_deliveryadd"
+        style="@style/EditText"
+        android:layout_marginTop="@dimen/margin_top"
+        android:hint="Delivery Address" />
+
+    <Button
+        android:id="@+id/check_out_button_place_order"
+        style="@style/button"
+        android:layout_marginTop="@dimen/margin_top_30"
+        android:text="Place Order"/>
+
+</LinearLayout>

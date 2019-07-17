@@ -13,19 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.ResetPasswordActivity"></activity>
+        <activity android:name=".activities.ThanksActivity"></activity>
+        <activity android:name=".activities.OrderHistoryActivity" />
+        <activity android:name=".activities.CheckOutActivity" />
+        <activity android:name=".activities.ForgetPasswordActivity" />
+        <activity android:name=".activities.UpdateProfileActivity" />
+        <activity android:name=".activities.CartActivity" />
+        <activity android:name=".activities.DetailActivity" />
+        <activity android:name=".activities.SubCategoryActivity" />
+        <activity android:name=".activities.ResetPasswordActivity" />
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.SplashActivity">
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.HomeActivity">
-
         </activity>
     </application>
 

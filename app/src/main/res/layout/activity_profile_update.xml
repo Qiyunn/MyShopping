@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/tool_bar"/>
+    <EditText
+        android:id="@+id/updte_profile_edit_fname"
+        style="@style/EditText"
+        android:hint="@string/new_firstname"
+        android:layout_marginTop="@dimen/margin_top_30"
+        />
+    <EditText
+        android:id="@+id/updte_profile_edit_lname"
+        style="@style/EditText"
+        android:hint="@string/new_lastname"
+        />
+    <EditText
+        android:id="@+id/updte_profile_edit_address"
+        style="@style/EditText"
+        android:hint="@string/new_address"
+        />
+    <EditText
+        android:id="@+id/updte_profile_edit_email"
+        style="@style/EditText"
+        android:hint="@string/new_email"
+        />
+    <EditText
+        android:id="@+id/updte_profile_edit_mobile"
+        style="@style/EditText"
+        android:hint="@string/mobile"
+        />
+    <Button
+        android:id="@+id/updte_profile_button_update"
+        style="@style/button"
+        android:layout_marginTop="@dimen/margin_top_30"
+        android:text="@string/update"/>
+
+
+</LinearLayout>
